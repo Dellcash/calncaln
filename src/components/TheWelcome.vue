@@ -100,9 +100,8 @@ import { google } from 'googleapis';
 
 const API_KEY = 'AIzaSyC8A77KZVhLUZMpYMuZm9zkV6TVgn0oyZM';
 const SCOPES = 'https://www.googleapis.com/auth/calendar.readonly';
-const clientId = '470300798985-g22qkd06a3pmsedqi3aje1lf7cg66bbs.apps.googleusercontent.com';
 
-const client = new google.auth.OAuth2(clientId, '', SCOPES);
+const client = new google.auth.OAuth2(API_KEY, '', SCOPES);
 
 const events = ref([]);
 
