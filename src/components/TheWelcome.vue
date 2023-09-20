@@ -28,7 +28,7 @@ export default {
       gapi.load('client:auth2', () => {
         gapi.client
           .init({
-            apiKey: 'IzaSyC8A77KZVhLUZMpYMuZm9zkV6TVgn0oyZM',
+            apiKey: 'AIzaSyBsP6hG1VkUV1EmDJePDs5RIcNbb9cRzaE',
             clientId: '470300798985-g22qkd06a3pmsedqi3aje1lf7cg66bbs.apps.googleusercontent.com',
             discoveryDocs: ['https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest'],
             scope: 'https://www.googleapis.com/auth/calendar.readonly',
