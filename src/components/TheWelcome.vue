@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <div>
     <button @click="authorize">Authorize</button>
     <button @click="listEvents">List Events</button>
@@ -79,9 +79,9 @@ export default {
 
 <style scoped>
 /* Your component-specific styles here */
-</style>
+</style> -->
 
-<!-- <template>
+<template>
   <div>
     <h1>Google Calendar API</h1>
     <button @click="getEvents">Get Events</button>
@@ -98,7 +98,7 @@ export default {
 import { ref } from 'vue';
 import { google } from 'googleapis';
 
-const API_KEY = 'IzaSyC8A77KZVhLUZMpYMuZm9zkV6TVgn0oyZM';
+const API_KEY = 'AIzaSyBsP6hG1VkUV1EmDJePDs5RIcNbb9cRzaE';
 const SCOPES = 'https://www.googleapis.com/auth/calendar.readonly';
 
 const client = new google.auth.OAuth2(API_KEY, '', SCOPES);
@@ -111,4 +111,4 @@ async function getEvents() {
 }
 
 getEvents();
-</script> -->
+</script>
