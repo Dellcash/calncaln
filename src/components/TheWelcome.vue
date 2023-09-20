@@ -29,7 +29,7 @@ export default {
         gapi.client
           .init({
             apiKey: 'AIzaSyC8A77KZVhLUZMpYMuZm9zkV6TVgn0oyZM',
-            clientId: '470300798985-1rcbcnbcds8r15mm3ft11tk0qp0e9eh7.apps.googleusercontent.com',
+            clientId: '470300798985-g22qkd06a3pmsedqi3aje1lf7cg66bbs.apps.googleusercontent.com',
             discoveryDocs: ['https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest'],
             scope: 'https://www.googleapis.com/auth/calendar.readonly',
           })
