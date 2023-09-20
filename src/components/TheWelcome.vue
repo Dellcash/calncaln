@@ -75,11 +75,11 @@ export default {
     },
   },
 };
-</script>
+</script> -->
 
 <style scoped>
 /* Your component-specific styles here */
-</style> -->
+</style> 
 
 <template>
   <div>
@@ -95,20 +95,30 @@ export default {
 </template>
 
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 import { google } from 'googleapis';
 
 const API_KEY = 'AIzaSyBsP6hG1VkUV1EmDJePDs5RIcNbb9cRzaE';
 const SCOPES = 'https://www.googleapis.com/auth/calendar.readonly';
 
+console.log('google', google);
 const client = new google.auth.OAuth2(API_KEY, '', SCOPES);
 
 const events = ref([]);
 
-async function getEvents() {
-  const response = await client.request('https://www.googleapis.com/calendar/v3/calendars/primary/events');
-  events.value = response.data.items;
-}
+const getEvents = async () => {
+  try {
+    const response = await client.request(
+      'https://www.googleapis.com/calendar/v3/calendars/primary/events'
+    );
+    events.value = response.data.items;
+  } catch (error) {
+    console.error('Error fetching events:', error);
+  }
+};
 
-getEvents();
+onMounted(() => {
+  getEvents();
+});
 </script>
+
