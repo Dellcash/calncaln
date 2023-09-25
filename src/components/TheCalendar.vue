@@ -17,13 +17,13 @@ const initGoogleApiClient = async () => {
 
     // Initialize the auth2 client with your client ID
     const auth2 = await gapi.auth2.init({
-      client_id: '470300798985-ao1tkcsr81gpnh55hcjifg1qoc0a7245.apps.googleusercontent.com',
+      client_id: '519386071351-rqcv4i0ojgbk8son24m2d0ldoflscc1i.apps.googleusercontent.com',
     });
 
     return auth2;
+    console.log('auth2', auth2);
   } catch (error) {
     console.log('err', error)
-    throw new Error('Error initializing Google API client: ' + error.message);
   }
 };
 
@@ -35,7 +35,8 @@ const signInUser = async (auth2) => {
     const user = await auth2.signIn();
     return user;
   } catch (error) {
-    throw new Error('Error signing in user: ' + error.message);
+
+    console.log('err', error)
   }
 };
 
@@ -45,7 +46,7 @@ const initCalendarApiClient = async () => {
     // Initialize the Google Calendar API client library
     await gapi.client.init({
       apiKey: 'AIzaSyBsP6hG1VkUV1EmDJePDs5RIcNbb9cRzaE',
-      clientId: '470300798985-ao1tkcsr81gpnh55hcjifg1qoc0a7245.apps.googleusercontent.com',
+      clientId: '519386071351-rqcv4i0ojgbk8son24m2d0ldoflscc1i.apps.googleusercontent.com',
       discoveryDocs: ['https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest'],
       scope: 'https://www.googleapis.com/auth/calendar.readonly',
     });
