@@ -8,14 +8,33 @@
 import { onMounted } from 'vue';
 
 // Function to initialize Google API client
+// const initGoogleApiClient = async () => {
+//   try {
+//     // Load the Google Identity Services library
+//     await gapi.load('auth2');
+
+//     // Initialize the auth2 client with your client ID
+//     const auth2 = await gapi.auth2.init({
+//       client_id: '470300798985-g22qkd06a3pmsedqi3aje1lf7cg66bbs.apps.googleusercontent.com',
+//     });
+
+//     return auth2;
+//   } catch (error) {
+//     throw new Error('Error initializing Google API client: ' + error.message);
+//   }
+// };
+
+// Function to initialize Google API client
 const initGoogleApiClient = async () => {
   try {
-    // Load the Google Identity Services library
-    await gapi.load('auth2');
+    // Wait for the Google API library to load
+    await new Promise((resolve) => {
+      gapi.load('client:auth2', resolve);
+    });
 
     // Initialize the auth2 client with your client ID
     const auth2 = await gapi.auth2.init({
-      client_id: '519386071351-rqcv4i0ojgbk8son24m2d0ldoflscc1i.apps.googleusercontent.com', // Replace with your actual client ID
+      client_id: '470300798985-g22qkd06a3pmsedqi3aje1lf7cg66bbs.apps.googleusercontent.com',
     });
 
     return auth2;
@@ -23,6 +42,7 @@ const initGoogleApiClient = async () => {
     throw new Error('Error initializing Google API client: ' + error.message);
   }
 };
+
 
 // Function to sign in the user
 const signInUser = async (auth2) => {
@@ -40,8 +60,8 @@ const initCalendarApiClient = async () => {
   try {
     // Initialize the Google Calendar API client library
     await gapi.client.init({
-      apiKey: 'YOUR_API_KEY', // Replace with your API key
-      clientId: '519386071351-rqcv4i0ojgbk8son24m2d0ldoflscc1i.apps.googleusercontent.com', // Replace with your actual client ID
+      apiKey: 'aizasybsp6hg1vkuv1emdjepds5ricnbb9crzae',
+      clientId: '519386071351-rqcv4i0ojgbk8son24m2d0ldoflscc1i.apps.googleusercontent.com',
       discoveryDocs: ['https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest'],
       scope: 'https://www.googleapis.com/auth/calendar.readonly',
     });
