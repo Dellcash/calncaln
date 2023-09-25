@@ -5,24 +5,7 @@
 </template>
 
 <script setup>
-import { onMounted } from 'vue';
-
-// Function to initialize Google API client
-// const initGoogleApiClient = async () => {
-//   try {
-//     // Load the Google Identity Services library
-//     await gapi.load('auth2');
-
-//     // Initialize the auth2 client with your client ID
-//     const auth2 = await gapi.auth2.init({
-//       client_id: '470300798985-g22qkd06a3pmsedqi3aje1lf7cg66bbs.apps.googleusercontent.com',
-//     });
-
-//     return auth2;
-//   } catch (error) {
-//     throw new Error('Error initializing Google API client: ' + error.message);
-//   }
-// };
+// import { onMounted } from 'vue';
 
 // Function to initialize Google API client
 const initGoogleApiClient = async () => {
@@ -34,11 +17,12 @@ const initGoogleApiClient = async () => {
 
     // Initialize the auth2 client with your client ID
     const auth2 = await gapi.auth2.init({
-      client_id: '470300798985-g22qkd06a3pmsedqi3aje1lf7cg66bbs.apps.googleusercontent.com',
+      client_id: '470300798985-ao1tkcsr81gpnh55hcjifg1qoc0a7245.apps.googleusercontent.com',
     });
 
     return auth2;
   } catch (error) {
+    console.log('err', error)
     throw new Error('Error initializing Google API client: ' + error.message);
   }
 };
@@ -60,8 +44,8 @@ const initCalendarApiClient = async () => {
   try {
     // Initialize the Google Calendar API client library
     await gapi.client.init({
-      apiKey: 'aizasybsp6hg1vkuv1emdjepds5ricnbb9crzae',
-      clientId: '519386071351-rqcv4i0ojgbk8son24m2d0ldoflscc1i.apps.googleusercontent.com',
+      apiKey: 'AIzaSyBsP6hG1VkUV1EmDJePDs5RIcNbb9cRzaE',
+      clientId: '470300798985-ao1tkcsr81gpnh55hcjifg1qoc0a7245.apps.googleusercontent.com',
       discoveryDocs: ['https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest'],
       scope: 'https://www.googleapis.com/auth/calendar.readonly',
     });
@@ -111,9 +95,9 @@ const startAuthentication = async () => {
 };
 
 // Execute the authentication process when the component is mounted
-onMounted(() => {
-  startAuthentication();
-});
+// onMounted(() => {
+//   startAuthentication();
+// });
 </script>
 
 
